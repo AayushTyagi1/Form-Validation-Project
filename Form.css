@@ -1,0 +1,7 @@
+input[type="text"], input[type="email"],textarea{
+	border: 1px solid_dashed;
+	background-color: rgb(221,216,212);
+	width: 600px;
+	padding:.5em;
+	font-size: 1.0em;
+}
