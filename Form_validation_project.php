@@ -12,7 +12,7 @@ if(empty($_POST["Name"]))
 else
 {
 	$Name=Test_user_input($_POST["Name"]);
-	if(!preg_match("/^[A-Za-z. ]*$/", $Name))
+	if(!preg_match("/^[A-Za-z\. ]*$/", $Name))
 		$Name_error="Only letters and white spaces are allowed";
 }
 if(empty($_POST["Email"]))
@@ -22,7 +22,7 @@ if(empty($_POST["Email"]))
 else
 {
 	$Email=Test_user_input($_POST["Email"]);
-	if(!preg_match("/[a-zA-Z .0-9_]{3,}@[a-zA-Z .]{3,}[.]{1}[a-zA-Z]{1,}/", $Email))
+	if(!preg_match("/[a-zA-Z \.0-9_]{3,}@[a-zA-Z \.]{3,}[.]{1}[a-zA-Z]{1,}/", $Email))
 	$Email_error="Invalid Format";
 }
 
@@ -57,7 +57,7 @@ echo "Website: {$_POST["Website"]}.<br>";
 echo "Comment: {$_POST["Comment"]}.<br>";
 }
 else{
-	echo "Please input your Information agian";
+	echo '<span class="Error">Please input your Information agian</span>';
 }
 }
 }
@@ -74,37 +74,34 @@ function Test_user_input($Data)
 	</head>
 	<link rel="stylesheet" type="text/css" href="Form.css">
 <body> 
-<h2>Form Validation with PHP.</h2>
+<h2 class="title">Form Validation with PHP.</h2>
 
-<form  action="Form_validation_project.php" method="post"> 
+<form  action="Form_validation_project.php" method="post" id="form"> 
 <legend>* Please Fill Out the following Fields.</legend>			
 <fieldset>
 Name:<br>
-<input class="input" type="text" Name="Name" value="">*
-<?php echo $Name_error; ?>
+<input class="input" type="text" Name="Name" value="" placeholder="Your name ">*
+<span class="Error"><?php echo $Name_error; ?></span>
 <br>
 E-mail:<br>
-<input class="input" type="text" Name="Email" value="">*
-<?php echo $Email_error; ?>
+<input class="input" type="text" Name="Email" value="" placeholder="Your Email">*
+<span class="Error"><?php echo $Email_error; ?></span>
 <br>
 Gender:<br>
 <input class="radio" type="radio" Name="Gender" value="Female">Female
 <input class="radio" type="radio" Name="Gender" value="Male">Male*
-<?php echo $Gender_error; ?>
+<span class="Error"><?php echo $Gender_error; ?></span>
 <br>   
 Website:<br>
-<input class="input" type="text" Name="Website" value="">*
-<?php echo $Website_error; ?>
+<input class="input" type="text" Name="Website" value="" placeholder="Your Website link">*
+<span class="Error"><?php echo $Website_error; ?></span>
 <br>
 Comment:<br>
-<textarea Name="Comment" rows="5" cols="25"></textarea>
+<textarea Name="Comment" rows="5" cols="25" placeholder="Write Something"></textarea>
 <br>
 <br>
 <input type="Submit" Name="Submit" value="Submit Your Information"><br>
    </fieldset><br>
-</form>
-
-
-	    
+</form>	    
 	</body>
 </html>
