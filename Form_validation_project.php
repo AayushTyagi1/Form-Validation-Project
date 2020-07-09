@@ -72,6 +72,7 @@ function Test_user_input($Data)
 	<head>
 		<title>Form Validation Project</title>
 	</head>
+	<link rel="stylesheet" type="text/css" href="Form.css">
 <body> 
 <h2>Form Validation with PHP.</h2>
 
