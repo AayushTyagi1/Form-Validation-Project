@@ -5,3 +5,43 @@ input[type="text"], input[type="email"],textarea{
 	padding:.5em;
 	font-size: 1.0em;
 }
+body
+{
+	margin:0;
+	padding: 0;
+	background: linear-gradient(rgba(0,0,50,0.1),rgba(0,0,50,0.1)),url(bcimg.jpg);
+	background-position: cover;
+	font-family: sans-serif;
+
+}
+.Error
+{
+	color:red;
+}
+form
+{
+	position: absolute;
+	cursor: move;
+	align-content: center;
+	width: 600px;
+	background: transparent;
+	border:none;
+	color: #fff;
+	font-size: 18px;
+	transition: all-4s-ease-in-out;
+}
+.title
+{
+	text-align: center;
+	color: white;
+	width:600px;
+}
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
